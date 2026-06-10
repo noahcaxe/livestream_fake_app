@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VIBE Live">
+<title>VIBE Live</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/comments.css">
+<link rel="stylesheet" href="css/config.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Camera feed -->
+  <div id="cam-feed">
+    <video id="video" autoplay playsinline muted></video>
+    <i class="ti ti-video" id="cam-icon"></i>
+  </div>
+
+  <!-- Main UI overlay -->
+  <div id="ui-overlay">
+
+    <!-- Top: logo + live badge + viewers -->
+    <div id="topbar">
+      <div id="app-logo"><span>VIBE</span></div>
+      <div id="live-badge">
+        <div id="live-dot"></div>
+        <span id="live-label">LIVE</span>
+      </div>
+      <div id="viewers-pill">
+        <i class="ti ti-eye"></i>
+        <span id="viewers-count">84 321</span>
+      </div>
+    </div>
+
+    <!-- Profile strip -->
+    <div id="profile-strip">
+      <div id="avatar">MK</div>
+      <div id="profile-info">
+        <div id="username">maria_kovalenko</div>
+        <div id="handle">@mariakovalenko · 2,4M obserwujących</div>
+      </div>
+      <button id="follow-btn">Obserwuj</button>
+    </div>
+
+    <div id="spacer"></div>
+
+    <!-- Scrolling comments -->
+    <div id="comments-area"></div>
+
+    <!-- Bottom input bar -->
+    <div id="bottom-bar">
+      <input type="text" id="comment-input" placeholder="Napisz komentarz..." />
+      <button class="action-btn" onclick="Likes.add()"><i class="ti ti-heart"></i></button>
+      <button class="action-btn" onclick="Config.toggle()"><i class="ti ti-settings"></i></button>
+    </div>
+
+  </div>
+
+  <!-- Right side action buttons -->
+  <div id="side-actions">
+    <div class="side-btn" onclick="Likes.add()">
+      <i class="ti ti-heart-filled" style="color:#ff6b6b"></i>
+      <span class="side-count" id="likes-count">48,2k</span>
+    </div>
+    <div class="side-btn">
+      <i class="ti ti-message-circle"></i>
+      <span class="side-count">12,1k</span>
+    </div>
+    <div class="side-btn">
+      <i class="ti ti-share"></i>
+      <span class="side-count">5,7k</span>
+    </div>
+  </div>
+
+  <!-- Settings panel -->
+  <div id="config-panel">
+    <div id="config-title">⚙ Ustawienia</div>
+
+    <div class="cfg-row">
+      <div class="cfg-label">Min. widzów</div>
+      <input type="range" id="min-viewers" min="1000" max="990000" step="1000" value="30000" oninput="Config.updateRange()">
+      <div class="cfg-val" id="min-val">30 000</div>
+    </div>
+    <div class="cfg-row">
+      <div class="cfg-label">Max. widzów</div>
+      <input type="range" id="max-viewers" min="10000" max="1200000" step="1000" value="150000" oninput="Config.updateRange()">
+      <div class="cfg-val" id="max-val">150 000</div>
+    </div>
+    <div class="cfg-row">
+      <div class="cfg-label">Szybkość komentarzy</div>
+      <input type="range" id="comment-speed" min="300" max="4000" step="100" value="1200" oninput="Config.updateSpeed()">
+      <div class="cfg-val" id="speed-val">Normalna</div>
+    </div>
+
+    <button id="cam-toggle-btn" onclick="Camera.flip()">
+      <i class="ti ti-camera-rotate"></i> Przełącz kamerę
+    </button>
+
+    <button class="cfg-close" onclick="Config.toggle()">✓ Gotowe</button>
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/viewers.js"></script>
+<script src="js/comments.js"></script>
+<script src="js/likes.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

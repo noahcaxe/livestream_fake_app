@@ -1,0 +1,72 @@
+/* config.css — settings panel */
+
+#config-panel {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  flex-direction: column;
+  padding-top: max(env(safe-area-inset-top), 24px);
+  padding-bottom: max(env(safe-area-inset-bottom), 24px);
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 100;
+}
+
+#config-panel.open { display: flex; }
+
+#config-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.cfg-row { margin-bottom: 20px; }
+
+.cfg-label {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.cfg-row input[type=range] {
+  width: 100%;
+  accent-color: #e040fb;
+  height: 4px;
+}
+
+.cfg-val {
+  color: #e040fb;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+#cam-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.cfg-close {
+  background: linear-gradient(135deg, #e040fb, #7c4dff);
+  border: none;
+  color: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: auto;
+  width: 100%;
+}

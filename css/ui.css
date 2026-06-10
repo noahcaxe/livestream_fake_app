@@ -1,0 +1,190 @@
+/* ui.css — overlay, topbar, profile strip, side actions, bottom bar */
+
+#ui-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: max(env(safe-area-inset-top), 14px);
+  padding-bottom: max(env(safe-area-inset-bottom), 20px);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* --- Topbar --- */
+#topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#app-logo span {
+  background: linear-gradient(135deg, #e040fb, #7c4dff);
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+#live-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 5px 11px;
+}
+
+#live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff4444;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+#live-label {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+#viewers-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
+  padding: 5px 11px;
+}
+
+#viewers-pill i { color: #ff6b6b; font-size: 15px; }
+
+#viewers-count {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 70px;
+}
+
+/* --- Profile strip --- */
+#profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e040fb, #7c4dff);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+#profile-info { flex: 1; min-width: 0; }
+#username { color: #fff; font-size: 13px; font-weight: 700; }
+#handle {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#follow-btn {
+  background: linear-gradient(135deg, #e040fb, #7c4dff);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+#spacer { flex: 1; }
+
+/* --- Bottom bar --- */
+#bottom-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#comment-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 22px;
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  outline: none;
+}
+
+#comment-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+/* --- Side actions --- */
+#side-actions {
+  position: absolute;
+  right: 12px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.side-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.side-btn i {
+  color: #fff;
+  font-size: 28px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.side-count {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#likes-count { transition: transform 0.15s; display: block; }
