@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="VIBE Live">
-<title>VIBE Live</title>
+<title>FAKE Live</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/ui.css">
@@ -16,18 +16,17 @@
 <body>
 <div id="app">
 
-  <!-- Camera feed -->
   <div id="cam-feed">
     <video id="video" autoplay playsinline muted></video>
     <i class="ti ti-video" id="cam-icon"></i>
   </div>
 
-  <!-- Main UI overlay -->
+
   <div id="ui-overlay">
 
-    <!-- Top: logo + live badge + viewers -->
+
     <div id="topbar">
-      <div id="app-logo"><span>VIBE</span></div>
+      <div id="app-logo"><span>FAKE</span></div>
       <div id="live-badge">
         <div id="live-dot"></div>
         <span id="live-label">LIVE</span>
@@ -38,22 +37,22 @@
       </div>
     </div>
 
-    <!-- Profile strip -->
+  
     <div id="profile-strip">
       <div id="avatar">MK</div>
       <div id="profile-info">
-        <div id="username">maria_kovalenko</div>
-        <div id="handle">@mariakovalenko · 2,4M obserwujących</div>
+        <div id="username">john_dou</div>
+        <div id="handle">@johndou · 2,4M obserwujących</div>
       </div>
       <button id="follow-btn">Obserwuj</button>
     </div>
 
     <div id="spacer"></div>
 
-    <!-- Scrolling comments -->
+   
     <div id="comments-area"></div>
 
-    <!-- Bottom input bar -->
+
     <div id="bottom-bar">
       <input type="text" id="comment-input" placeholder="Napisz komentarz..." />
       <button class="action-btn" onclick="Likes.add()"><i class="ti ti-heart"></i></button>
@@ -62,7 +61,7 @@
 
   </div>
 
-  <!-- Right side action buttons -->
+
   <div id="side-actions">
     <div class="side-btn" onclick="Likes.add()">
       <i class="ti ti-heart-filled" style="color:#ff6b6b"></i>
@@ -78,7 +77,7 @@
     </div>
   </div>
 
-  <!-- Settings panel -->
+
   <div id="config-panel">
     <div id="config-title">⚙ Ustawienia</div>
 

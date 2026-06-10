@@ -1,4 +1,4 @@
-// comments.js — поток комментариев, скорость, рендер
+
 
 const Comments = (() => {
   let idx = 0;

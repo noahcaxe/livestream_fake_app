@@ -1,4 +1,4 @@
-// camera.js — доступ к камере, переключение front/back
+
 
 const Camera = (() => {
   let stream = null;

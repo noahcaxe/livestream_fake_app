@@ -1,4 +1,4 @@
-/* ui.css — overlay, topbar, profile strip, side actions, bottom bar */
+
 
 #ui-overlay {
   position: absolute;
@@ -11,7 +11,7 @@
   padding-right: 12px;
 }
 
-/* --- Topbar --- */
+
 #topbar {
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
   min-width: 70px;
 }
 
-/* --- Profile strip --- */
+
 #profile-strip {
   display: flex;
   align-items: center;
@@ -122,7 +122,7 @@
 
 #spacer { flex: 1; }
 
-/* --- Bottom bar --- */
+
 #bottom-bar {
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@
   font-size: 18px;
 }
 
-/* --- Side actions --- */
+
 #side-actions {
   position: absolute;
   right: 12px;

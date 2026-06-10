@@ -1,4 +1,4 @@
-// likes.js — счётчик лайков
+
 
 const Likes = (() => {
   let count = 48200;

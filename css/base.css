@@ -1,4 +1,4 @@
-/* base.css — reset, body, app shell, camera feed */
+
 
 * {
   box-sizing: border-box;
@@ -22,7 +22,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Camera feed layer */
+
 #cam-feed {
   position: absolute;
   inset: 0;
