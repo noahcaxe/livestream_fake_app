@@ -6,12 +6,22 @@ const Camera = (() => {
 
   async function start(mode) {
     if (stream) stream.getTracks().forEach(t => t.stop());
+
+    // Build constraints – for landscape mode request 16:9 wide, for portrait 9:16 tall
+    const isLandscape = document.body.classList.contains("landscape-mode") || window.CAMERA_LANDSCAPE;
+    const videoConstraints = isLandscape
+      ? { facingMode: mode, width: { ideal: 1920 }, height: { ideal: 1080 }, aspectRatio: { ideal: 16/9 } }
+      : { facingMode: mode, width: { ideal: 1080 }, height: { ideal: 1920 }, aspectRatio: { ideal: 9/16 } };
+
     try {
-      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: mode }, audio: false });
+      stream = await navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: false });
       const video = document.getElementById("video");
       video.srcObject = stream;
       video.style.display = "block";
       document.getElementById("cam-icon").style.display = "none";
+
+      // Mirror only the front (user) camera
+      video.style.transform = (mode === "user") ? "scaleX(-1)" : "scaleX(1)";
     } catch (e) {
       console.warn("Camera unavailable:", e);
     }
@@ -22,5 +32,5 @@ const Camera = (() => {
     await start(facingMode);
   }
 
-  return { start, flip };
+  return { start, flip, getFacingMode: () => facingMode };
 })();
