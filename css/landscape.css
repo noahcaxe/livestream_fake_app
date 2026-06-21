@@ -1,0 +1,34 @@
+/**
+ * Landscape mode overrides
+ * Applied only on index-landscape.html (body.landscape-mode)
+ */
+
+/* Force horizontal layout */
+body.landscape-mode {
+  /* Encourage browser to stay in landscape */
+}
+
+/* In landscape: camera fills horizontally, UI overlaid on right side */
+body.landscape-mode #ui-overlay {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+body.landscape-mode #comments-area {
+  max-height: 35%;
+}
+
+/* Tighter comment bubbles in landscape to save horizontal space */
+body.landscape-mode .comment-bubble {
+  max-width: 280px;
+}
+
+/* Side actions shift a bit to account for landscape safe area */
+body.landscape-mode #side-actions {
+  right: max(env(safe-area-inset-right), 12px);
+  bottom: 60px;
+}
+
+body.landscape-mode #bottom-bar {
+  padding-right: max(env(safe-area-inset-right), 0px);
+}

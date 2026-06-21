@@ -6,15 +6,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Życie Xaviera">
-<title>Życie Xaviera – LIVE</title>
+<title>Życie Xaviera – LIVE (poziom)</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/ui.css">
 <link rel="stylesheet" href="css/comments.css">
 <link rel="stylesheet" href="css/config.css">
+<link rel="stylesheet" href="css/landscape.css">
 </head>
-<body>
+<body class="landscape-mode">
 <div id="app">
 
   <div id="cam-feed">
@@ -24,7 +25,6 @@
 
 
   <div id="ui-overlay">
-
 
     <div id="topbar">
       <div id="app-logo"><span>FAKE</span></div>
@@ -38,7 +38,6 @@
       </div>
     </div>
 
-  
     <div id="profile-strip">
       <div id="avatar-wrap">
         <img id="avatar-img" src="avatar.jpg" alt="Życie Xaviera" onerror="this.style.display='none';document.getElementById('avatar-fallback').style.display='flex'">
@@ -53,9 +52,7 @@
 
     <div id="spacer"></div>
 
-   
     <div id="comments-area"></div>
-
 
     <div id="bottom-bar">
       <input type="text" id="comment-input" placeholder="Napisz komentarz..." />
@@ -64,7 +61,6 @@
     </div>
 
   </div>
-
 
   <div id="side-actions">
     <div class="side-btn" onclick="Likes.add()">
@@ -81,10 +77,8 @@
     </div>
   </div>
 
-
   <div id="config-panel">
     <div id="config-title">⚙ Ustawienia</div>
-
     <div class="cfg-row">
       <div class="cfg-label">Min. widzów</div>
       <input type="range" id="min-viewers" min="1000" max="990000" step="1000" value="30000" oninput="Config.updateRange()">
@@ -100,11 +94,9 @@
       <input type="range" id="comment-speed" min="300" max="4000" step="100" value="1200" oninput="Config.updateSpeed()">
       <div class="cfg-val" id="speed-val">Normalna</div>
     </div>
-
     <button id="cam-toggle-btn" onclick="Camera.flip()">
       <i class="ti ti-camera-rotate"></i> Przełącz kamerę
     </button>
-
     <button class="cfg-close" onclick="Config.toggle()">✓ Gotowe</button>
   </div>
 
@@ -118,5 +110,9 @@
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
 <script src="js/fullscreen.js"></script>
+<script>
+  // Force landscape camera on load
+  window.CAMERA_LANDSCAPE = true;
+</script>
 </body>
 </html>

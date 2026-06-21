@@ -1,7 +1,11 @@
 
 
 const Data = {
+  // ── Baza komentarzy ──────────────────────────────────────────────────────
+  // Możesz podmienić tę tablicę albo załadować zewnętrzny plik comments.json
+  // Każdy wpis: ["nazwa_użytkownika", "treść komentarza"]
   comments: [
+    // --- oryginalny zestaw (PL) ---
     ["anna_w",           "Niee mozliwe 😭😭"],
     ["krzys99",          "piękna jesteś!!!"],
     ["zofia_m",          "obserwuję od początku i wow ❤️"],
@@ -32,6 +36,27 @@ const Data = {
     ["ewa_kawaii",       "nie wiem jak to możliwe że jesteś taka piękna"],
     ["igor_b",           "HEJKA"],
     ["celina22",         "stream bez końca pls 🙏"],
+    // --- dodatkowe ---
+    ["xavier_fan01",     "Zycie Xaviera to najlepsza decyzja na ten wieczór 🔥"],
+    ["marta_pl",         "weszłam tu przez przypadek i już nie wychodzę 😂"],
+    ["karolina_w",       "ta energia jest niesamowita!!!"],
+    ["bartek_xyz",       "Xavier king 👑"],
+    ["weronika99",       "skąd jesteś? pytam bo świetnie wyglądasz na kamerze"],
+    ["tomasz_live",      "1.2M i rośnie 📈📈"],
+    ["ania.kowalska",    "dawaj więcej takich live!"],
+    ["michal_k",         "oglądamy razem z całą rodziną ❤"],
+    ["gosia_m",          "już trzeci raz wracam na ten live lol"],
+    ["patrycja_07",      "zostań na zawsze na żywo 😩"],
+    ["lukasz_fan",       "ta kamera to profesja 👌"],
+    ["natalia.x",        "serio jeden z lepszych livów jakie widziałam"],
+    ["damian_yt",        "subskrybuje od razu!"],
+    ["zuzanna_w",        "ten dźwięk w tle 🎶"],
+    ["michalina_art",    "piękne ujęcie 😍"],
+    ["sebastian_k",      "hej z Gdańska 🌊"],
+    ["agnieszka_m",      "Xavier zawsze dostarcza 💯"],
+    ["rafal_pro",        "widzów przybywa co minutę 👀"],
+    ["dominika_f",       "nie mogę oderwać oczu"],
+    ["pawel_stream",     "live level: MASTER 🏆"],
   ],
 
   avatarColors: [
@@ -43,3 +68,24 @@ const Data = {
     "linear-gradient(135deg,#4776e6,#8e54e9)",
   ],
 };
+
+/**
+ * Optional: load comments from external comments.json
+ * Place a "comments.json" file next to index.html with format:
+ * [["username", "comment text"], ...]
+ * The file will override Data.comments if loaded successfully.
+ */
+(async function loadExternalComments() {
+  try {
+    const resp = await fetch("comments.json");
+    if (resp.ok) {
+      const external = await resp.json();
+      if (Array.isArray(external) && external.length > 0) {
+        Data.comments = external;
+        console.log(`Loaded ${external.length} comments from comments.json`);
+      }
+    }
+  } catch (e) {
+    // No external file – use built-in comments
+  }
+})();
