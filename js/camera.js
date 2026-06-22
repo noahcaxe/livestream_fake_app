@@ -1,17 +1,10 @@
-
-
 const Camera = (() => {
   let stream = null;
   let facingMode = "user";
 
   async function start(mode) {
     if (stream) stream.getTracks().forEach(t => t.stop());
-
-    // Build constraints – for landscape mode request 16:9 wide, for portrait 9:16 tall
-    const isLandscape = document.body.classList.contains("landscape-mode") || window.CAMERA_LANDSCAPE;
-    const videoConstraints = isLandscape
-      ? { facingMode: mode, width: { ideal: 1920 }, height: { ideal: 1080 }, aspectRatio: { ideal: 16/9 } }
-      : { facingMode: mode, width: { ideal: 1080 }, height: { ideal: 1920 }, aspectRatio: { ideal: 9/16 } };
+    const videoConstraints = { facingMode: mode };
 
     try {
       stream = await navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: false });

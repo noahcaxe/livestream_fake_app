@@ -3,11 +3,6 @@
  * Applied only on index-landscape.html (body.landscape-mode)
  */
 
-/* Force horizontal layout */
-body.landscape-mode {
-  /* Encourage browser to stay in landscape */
-}
-
 /* In landscape: camera fills horizontally, UI overlaid on right side */
 body.landscape-mode #ui-overlay {
   padding-left: 8px;
@@ -31,4 +26,44 @@ body.landscape-mode #side-actions {
 
 body.landscape-mode #bottom-bar {
   padding-right: max(env(safe-area-inset-right), 0px);
+}
+
+/* ── Landscape: larger LIVE badge ──────────────────────────── */
+body.landscape-mode #live-badge {
+  padding: 7px 16px;
+  gap: 7px;
+}
+
+body.landscape-mode #live-dot {
+  width: 10px;
+  height: 10px;
+}
+
+body.landscape-mode #live-label {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+/* ── Landscape: larger avatar + username ───────────────────── */
+body.landscape-mode #avatar-wrap {
+  width: 52px;
+  height: 52px;
+  border-width: 2.5px;
+}
+
+body.landscape-mode #avatar-fallback {
+  font-size: 14px;
+}
+
+body.landscape-mode #username {
+  font-size: 17px;
+}
+
+body.landscape-mode #handle {
+  font-size: 13px;
+}
+
+body.landscape-mode #profile-strip {
+  gap: 10px;
+  margin-bottom: 10px;
 }
